@@ -1,0 +1,689 @@
+/* ==================================== */
+/* 0. Variables y Reset Básico */
+/* ==================================== */
+
+:root {
+    /* Colores según tu guía */
+    --color-primario: #216FF0;   /* Azul brillante intenso - color original */
+    --color-primario-suave: #3688FF; /* Nuevo azul más suave para el hero */
+    --color-secundario: #FFFFFF; /* Blanco */
+    --color-terciario: #1A1A1A;  /* Negro Suave */
+    --color-realce: #28B463;    /* Verde Brillante */
+    --color-fondo-claro: #F5F9FF; /* Un azul muy suave para secciones (Problema, Características) */
+    --color-footer-bg: #1a3c7a; /* Azul oscuro para el footer */
+
+    /* Fuentes */
+    --font-principal: 'Sans-Serif Collection', sans-serif; /* Placeholder */
+    --font-secundaria: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secundaria);
+    line-height: 1.6;
+    color: var(--color-terciario);
+    background-color: var(--color-secundario);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==================================== */
+/* 1. Tipografía y Encabezados */
+/* ==================================== */
+
+h1, h2, h3 {
+    font-family: var(--font-principal);
+    line-height: 1.2;
+    color: var(--color-terciario);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3.2rem;
+    color: var(--color-terciario);
+}
+
+h2 {
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+/* ==================================== */
+/* 2. Botones CTA */
+/* ==================================== */
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s;
+    text-align: center;
+}
+
+.primary-cta {
+    background-color: var(--color-realce);
+    color: var(--color-secundario);
+    border: 2px solid var(--color-realce);
+}
+
+.primary-cta:hover {
+    background-color: #249d56;
+    transform: translateY(-2px);
+}
+
+.secondary-cta {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+}
+
+.secondary-cta:hover {
+    background-color: #1c5ecc;
+    transform: translateY(-2px);
+}
+
+
+/* ==================================== */
+/* 3. Navbar */
+/* ==================================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-family: var(--font-principal);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-terciario);
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--color-primario);
+}
+
+/* Estilos específicos de la Navbar para el Hero (fondo azul) */
+.hero-section-nuevo .navbar {
+    padding: 30px 0 0;
+}
+
+.hero-section-nuevo .logo {
+    color: var(--color-secundario);
+}
+
+.hero-section-nuevo .nav-links a {
+    color: var(--color-secundario);
+    opacity: 0.8;
+}
+
+.hero-section-nuevo .nav-links a:hover {
+    opacity: 1;
+}
+
+.hero-section-nuevo .cta-nav.login {
+    background: none;
+    border: 1px solid var(--color-secundario);
+    color: var(--color-secundario) !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: normal;
+}
+
+.hero-section-nuevo .cta-nav.signup {
+    background-color: var(--color-secundario);
+    color: var(--color-primario) !important;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+
+/* ==================================== */
+/* 4. Hero Section - NUEVO ESTILO */
+/* ==================================== */
+
+.hero-section-nuevo {
+    background-color: var(--color-primario-suave);
+    color: var(--color-secundario);
+    padding-bottom: 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor principal de texto e imagen */
+.hero-main-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 60px 20px;
+}
+
+.hero-text-content {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 40px;
+}
+
+.hero-text-content h1 {
+    font-size: 3.8rem;
+    color: var(--color-secundario);
+    margin-bottom: 20px;
+}
+
+.hero-text-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.play-button {
+    color: var(--color-secundario);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.play-button .triangle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-realce);
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 0.8rem;
+}
+
+.hero-image-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
+    /* ! ATENCIÓN: Reemplaza esto con la ruta a tu imagen real */
+    background: url('https://www.pngarts.com/files/7/College-Student-Transparent-Background-PNG.png') no-repeat center bottom;
+    background-size: contain;
+    margin-top: -50px;
+}
+
+/* ==================================== */
+/* 5. Sección de Misión y Visión (NUEVA) */
+/* ==================================== */
+
+.section-mv {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--color-secundario);
+}
+
+.subtitle-center {
+    font-family: var(--font-secundaria);
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-primario);
+    margin-bottom: 5px;
+}
+
+.tagline {
+    font-size: 1.4rem;
+    color: var(--color-terciario);
+    margin-bottom: 50px;
+}
+
+.mv-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.mv-item {
+    flex: 1;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid;
+    height: 100%;
+    text-align: left;
+}
+
+.mv-item:first-child {
+    border-color: var(--color-primario);
+}
+
+.mv-item:last-child {
+    border-color: var(--color-realce);
+}
+
+
+.mv-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.mv-item h3 {
+    color: var(--color-terciario);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* ==================================== */
+/* 6. El Problema */
+/* ==================================== */
+
+.section-problema {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--color-fondo-claro);
+}
+
+.section-problema h3 {
+    color: var(--color-primario);
+    margin-bottom: 40px;
+}
+
+.problemas-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.problema-item {
+    background-color: var(--color-secundario);
+    color: var(--color-terciario);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ==================================== */
+/* 7. La Solución */
+/* ==================================== */
+
+.section-solucion {
+    padding: 80px 0;
+    background-color: var(--color-secundario);
+}
+
+.section-solucion .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.solucion-content {
+    flex: 1;
+}
+
+.solucion-content h3 {
+    font-size: 2.5rem;
+}
+
+.solucion-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.solucion-image {
+    flex: 1;
+    text-align: center;
+}
+
+.solucion-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==================================== */
+/* 8. Características (Cómo Funciona) */
+/* ==================================== */
+
+.section-caracteristicas {
+    padding: 80px 0;
+    background-color: var(--color-fondo-claro);
+    text-align: center;
+}
+
+.section-caracteristicas h2 {
+    margin-bottom: 60px;
+}
+
+.caracteristicas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.caracteristica-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.icon-container {
+    font-size: 2.5rem;
+    color: var(--color-primario);
+    margin-bottom: 15px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #cce0ff;
+    margin: 0 auto 15px;
+}
+
+.caracteristica-item h4 {
+    font-family: var(--font-principal);
+    font-size: 1.3rem;
+    color: var(--color-terciario);
+    margin-bottom: 10px;
+}
+
+/* ==================================== */
+/* 9. Resultados y Cierre */
+/* ==================================== */
+
+.section-resultados {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-resultados h3 {
+    color: var(--color-primario);
+    margin-bottom: 50px;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.stat-item {
+    padding: 20px;
+    flex: 1;
+}
+
+.stat-number {
+    font-family: var(--font-principal);
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--color-realce);
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    font-size: 1.1rem;
+}
+
+.testimonial-placeholder {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: var(--color-fondo-claro);
+    border-radius: 10px;
+    font-style: italic;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-final-cta {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--color-terciario);
+    color: var(--color-secundario);
+}
+
+.section-final-cta h2 {
+    color: var(--color-secundario);
+    margin-bottom: 40px;
+    font-size: 2.8rem;
+}
+
+.final-cta {
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+    padding: 18px 40px;
+}
+
+.section-final-cta p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* ==================================== */
+/* 10. Footer - NUEVO ESTILO OSCURO */
+/* ==================================== */
+
+.footer-oscuro {
+    background-color: var(--color-footer-bg);
+    color: var(--color-secundario);
+    padding: 40px 0 20px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    font-family: var(--font-principal);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.newsletter p {
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    flex-grow: 1;
+    max-width: 250px;
+    font-size: 1rem;
+}
+
+.newsletter-form .cta-button.signup {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: var(--color-realce);
+    color: var(--color-secundario) !important;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.footer-links a {
+    color: var(--color-secundario);
+    text-decoration: none;
+    margin-right: 20px;
+    opacity: 0.7;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+.copyright p {
+    margin: 5px 0;
+    opacity: 0.7;
+}
+
+
+/* ==================================== */
+/* 11. Responsividad (Móviles) */
+/* ==================================== */
+
+@media (max-width: 992px) {
+    /* Navbar */
+    .nav-links {
+        display: none;
+    }
+
+    /* Hero Nuevo */
+    .hero-main-content {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .hero-text-content {
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .hero-text-content h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    .hero-text-content p {
+        text-align: center;
+        max-width: 100%;
+    }
+    .hero-actions {
+        justify-content: center;
+    }
+    .hero-image-right {
+        min-height: 300px;
+        margin-top: 0;
+    }
+    
+    /* Misión Visión */
+    .mv-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .mv-item {
+        text-align: center;
+    }
+    .mv-item h3 {
+        text-align: center;
+    }
+    
+    /* Solución */
+    .section-solucion .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .solucion-content {
+        order: 2;
+    }
+    .solucion-image {
+        order: 1;
+    }
+
+
+    /* Características */
+    .caracteristicas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Stats */
+    .stats-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* Footer */
+    .footer-top, .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-logo, .newsletter, .newsletter-form, .footer-links {
+        margin-bottom: 20px;
+    }
+    .newsletter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    .newsletter-form input {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Tipografía */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .problema-item {
+        width: 100%;
+    }
+
+    /* Características */
+    .caracteristicas-grid {
+        grid-template-columns: 1fr;
+    }
+}
