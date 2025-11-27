@@ -3,119 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataforma de Cursos</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Perfil de Usuario - Educa-T</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">L</div>
-        <ul class="nav-links">
-            <li><a href="#courses">Courses</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#user">en ▼</a></li>
-        </ul>
-    </nav>x|
 
-    <div class="hero"></div>
+    <nav class="profile-navbar">
+        <div class="profile-nav-left">
+            <div class="profile-logo-circle">E</div>
+        </div>
+        <div class="profile-nav-center">
+            <a href="index.html">Inicio</a>
+            <a href="#">Horario</a>
+            <a href="#">Buscar</a>
+            <a href="#">Tutorías</a>
+            <a href="#">Contenido</a>
+        </div>
+        
+        <div class="profile-nav-right">
+            <div class="profile-user-menu-container">
+                <button class="profile-user-btn" id="profileUserBtn">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Lina">
+                    <span>Lina</span>
+                    <span class="arrow">▼</span>
+                </button>
 
-    <div class="container">
-        <div class="content-wrapper">
-            <div class="left-section">
-                <div class="profile-section">
-                    <div class="section-label">Foto de perfil</div>
-                    <div class="profile-header">
-                        <div class="profile-image">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300" alt="Foto de perfil">
-                        </div>
-                        <div class="profile-actions">
-                            <button class="btn btn-primary">Cambiar foto de perfil</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="profile-section">
-                    <div class="section-label">Nombre</div>
-                    <input type="text" class="input-field" id="nombre" placeholder="">
-                </div>
-
-                <div class="profile-section">
-                    <div class="section-label">Apellido</div>
-                    <input type="text" class="input-field" id="apellido" placeholder="">
-                </div>
-
-                <div class="profile-section">
-                    <div class="section-label">Correo electrónico</div>
-                    <input type="email" class="input-field" id="email" placeholder="">
-                </div>
-
-                <div class="profile-section">
-                    <div class="section-label">Zona horaria</div>
-                    <input type="text" class="input-field" id="timezone" placeholder="">
-                </div>
-
-                <button class="btn btn-save">Guardar</button>
-            </div>
-
-            <div class="right-section">
-                <div class="user-card">
-                    <div class="user-title">Usuario</div>
-                    <div class="user-image-container">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600" alt="Team meeting">
-                    </div>
-                    <button class="btn btn-content">Cambiar tus contenidos</button>
-                </div>
-
-                <div class="course-info-card">
-                    <div class="card-title">This Course included</div>
-                    <ul class="course-features">
-                        <li>3 hours on-demand</li>
-                        <li>12 articles</li>
-                        <li>Certificate of completion</li>
-                    </ul>
-                </div>
-
-                <div class="training-card">
-                    <div class="card-title">Training 5 or more people</div>
-                    <p class="card-text">Get your team access to our full library with reporting and insights.</p>
-                </div>
-
-                <div class="share-card">
-                    <div class="card-title">Share this course</div>
-                    <div class="social-icons">
-                        <div class="social-icon facebook"></div>
-                        <div class="social-icon twitter"></div>
-                        <div class="social-icon linkedin"></div>
-                        <div class="social-icon whatsapp"></div>
-                        <div class="social-icon email"></div>
-                    </div>
+                <div class="profile-dropdown-menu" id="profileUserDropdown">
+                    <a href="#" class="profile-dropdown-item">
+                        <span>⚙️</span> Configuraciones
+                    </a>
+                    <a href="index.html" class="profile-dropdown-item profile-logout">
+                        <span>🚪</span> Cerrar Sesión
+                    </a>
                 </div>
             </div>
         </div>
+    </nav>
 
-        <div class="courses-section">
-            <div class="courses-header">
-                <h2>Marketing Articles</h2>
-                <a href="#" class="see-all">See all</a>
+    <div class="profile-hero"></div>
+
+    <div class="profile-container profile-main-layout">
+        
+        <div class="profile-col-left">
+            <div class="profile-header-row">
+                <div class="profile-info-block">
+                    <h3>Foto de perfil</h3>
+                    <div class="profile-avatar-wrapper">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300" alt="Profile">
+                    </div>
+                </div>
+                <div class="profile-action-block">
+                    <span class="profile-link-edit">Editar</span>
+                    <button class="profile-btn profile-btn-primary profile-btn-wide">Cambiar foto</button>
+                </div>
             </div>
-            <div class="courses-grid" id="coursesGrid"></div>
+
+            <form class="profile-form-wrapper">
+                <div class="profile-form-group">
+                    <label>Nombre</label>
+                    <input type="text" value="Lina" class="profile-input">
+                </div>
+
+                <div class="profile-form-group">
+                    <label>Apellido</label>
+                    <input type="text" value="Benitez" class="profile-input">
+                </div>
+
+                <div class="profile-form-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" value="lina@example.com" class="profile-input">
+                </div>
+
+                <div class="profile-form-group">
+                    <label>Zona horaria</label>
+                    <input type="text" value="(GMT-05:00) Lima" class="profile-input">
+                </div>
+
+                <div class="profile-form-actions">
+                    <button type="button" class="profile-btn profile-btn-primary profile-btn-save">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="profile-col-right">
+            
+            <div class="profile-sidebar-item">
+                <h3>Usuario</h3>
+                <a href="#" class="profile-link-cyan">@linabenitez</a>
+                
+                <div class="profile-team-img">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600" alt="Grupo de Estudio">
+                </div>
+                
+                <button class="profile-btn profile-btn-primary profile-btn-full">Cambiar contraseña</button>
+            </div>
+
+            <div class="profile-sidebar-item profile-border-top">
+                <h3>Tu Plan Estudiantil</h3>
+                <ul class="profile-feature-list">
+                    <li><span class="p-icon">🛡️</span> Garantía de aprendizaje</li>
+                    <li><span class="p-icon">📱</span> Acceso multidispositivo</li>
+                    <li><span class="p-icon">📄</span> Certificados oficiales</li>
+                    <li><span class="p-icon">📊</span> 32 Módulos activos</li>
+                </ul>
+            </div>
+
+            <div class="profile-sidebar-item profile-border-top">
+                <h3>¿Estudias en grupo?</h3>
+                <p class="profile-text-sm">Crea un equipo de estudio con 5 o más compañeros y obtengan acceso a herramientas colaborativas premium.</p>
+            </div>
+
+            <div class="profile-sidebar-item profile-border-top">
+                <h3>Comparte Educa-T</h3>
+                <div class="profile-social-icons">
+                    <a href="#" class="p-soc-icon twitter">🐦</a>
+                    <a href="#" class="p-soc-icon youtube">▶️</a>
+                    <a href="#" class="p-soc-icon insta">📷</a>
+                    <a href="#" class="p-soc-icon telegram">✈️</a>
+                    <a href="#" class="p-soc-icon whatsapp">💬</a>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">L</div>
-            <div class="footer-brand">Educa-T</div>
-            <p class="footer-text">Subscribe to get our Newsletter</p>
-            <div class="subscribe-box">
-                <input type="email" placeholder="Your Email" class="subscribe-input">
-                <button class="btn btn-subscribe">Subscribe</button>
+    <div class="profile-container profile-courses-section">
+        <div class="profile-courses-header">
+            <h2>Recursos de Aprendizaje</h2>
+            <a href="#" class="profile-see-all">Ver todo</a>
+        </div>
+        
+        <div class="profile-courses-grid" id="profileCoursesGrid"></div>
+    </div>
+
+    <footer class="profile-footer">
+        <div class="profile-footer-content">
+            <div class="profile-logo-circle profile-footer-logo">E</div>
+            <div class="profile-brand-name">Educa-T</div>
+            
+            <p class="profile-newsletter-text">Suscríbete a nuestro boletín</p>
+            
+            <form class="profile-subscribe-form">
+                <input type="email" placeholder="Tu correo electrónico">
+                <button type="submit">Suscribirse</button>
+            </form>
+            
+            <div class="profile-footer-links">
+                <a href="#">Trabaja con nosotros</a>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos y Condiciones</a>
             </div>
-            <ul class="footer-links">
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-            </ul>
-            <p class="copyright">© 2025 Class Technologies Inc.</p>
+            
+            <div class="profile-copyright">
+                © 2025 EduCa-T Inc. Todos los derechos reservados.
+            </div>
         </div>
     </footer>
 
